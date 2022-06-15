@@ -138,15 +138,15 @@ def send_daily_report():
         # print(my_time)
         if Data:
             pass
-            # bot.send_message("-1001778640424",f"Your daily summary as on {my_time}UTC: \nTotal Received: {int(Data[1])/1000000}USDT \nTotal Transfers: {int(Data[2])/1000000}USDT \nNet Amount:{int(Data[3])/1000000}USDT \n")
+            bot.send_message("-1001778640424",f"Your daily summary as on {my_time}UTC: \nTotal Received: {int(Data[1])/1000000}USDT \nTotal Transfers: {int(Data[2])/1000000}USDT \nNet Amount:{int(Data[3])/1000000}USDT \n")
     except Exception as e:
         return(e)
 
 
-# if __name__ == '__main__':
-    # schedule.every().day.at("00:00").do(send_daily_report)
+if __name__ == '__main__':
+    schedule.every().day.at("00:00").do(send_daily_report)
     # schedule.every().second.do(send_daily_report)
-    # Thread(target=schedule_checker).start() 
+    Thread(target=schedule_checker).start() 
 
 bot.poll()
 
